@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Blank.FillingPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand"
+                     Spacing="10"
+                     Padding="10,20,10,20"
+                     x:Name="stackLayout">
+
+                <Label Text="Бланк"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
+                <!--#region FirstName-->
+                <StackLayout Orientation="Horizontal"
+                         Spacing="5"
+                         Padding="0,0,0,0">
+                    <Label Text="Имя: " 
+                       FontSize="Medium"
+                       VerticalOptions="End" />
+                    <Entry  Text="{Binding FirstName}"
+                        HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <!--#endregion-->
+
+                <!--#region LastName-->
+                <StackLayout Orientation="Horizontal"                         
+                         Spacing="5"
+                         Padding="0,0,0,0">
+                    <Label Text="Фамилия: " 
+                       FontSize="Medium"
+                       VerticalOptions="End" />
+                    <Entry  Text="{Binding LastName}"
+                        HorizontalOptions="FillAndExpand" 
+                        IsEnabled="False" />
+                </StackLayout>
+                <!--#endregion-->
+
+                <!--#region Countries-->
+                <StackLayout Orientation="Horizontal"                         
+                         Spacing="5"
+                         Padding="0,0,0,0">
+                    <Label Text="Страна: " 
+                       FontSize="Medium"
+                       VerticalOptions="End" />
+                    <Entry x:Name="countriesEntry"
+                           TextChanged="OnCountriesEntry_TextChanged"
+                           Focused="OnCountriesEntry_Focused"
+                           Unfocused="OnCountriesEntry_Unfocused"
+                           HorizontalOptions="FillAndExpand"
+                           IsEnabled="False"
+                           Text="{Binding Country.Title, Mode=TwoWay}"/>
+                    <Button x:Name="countriesButton"
+                        Text="V"
+                        Clicked="OnCountriesButton_Clicked" />
+                </StackLayout>
+
+                <StackLayout>
+                    <ListView x:Name="countriesListView"
+                          IsPullToRefreshEnabled="True"
+                          IsVisible="False"
+                          ItemSelected="OnCountriesListView_ItemSelected"
+                          HeightRequest="250"/>
+                </StackLayout>
+                <!--#endregion-->
+
+                <!--#region Cities-->
+                <StackLayout Orientation="Horizontal"                         
+                         Spacing="5"
+                         Padding="0,0,0,0">
+                    <Label Text="Город: " 
+                       FontSize="Medium"
+                       VerticalOptions="End" />
+                    <Entry x:Name="citiesEntry"
+                           TextChanged="OnCitiesEntry_TextChanged"
+                           Focused="OnCitiesEntry_Focused"
+                           Unfocused="OnCitiesEntry_Unfocused"
+                           HorizontalOptions="FillAndExpand"
+                           IsEnabled="False"
+                           Text="{Binding City.Title, Mode=TwoWay}"/>
+                    <Button x:Name="citiesButton"
+                        Text="V"
+                        Clicked="OnCitiesButton_Clicked" />
+                </StackLayout>
+
+                <StackLayout>
+                    <ListView x:Name="citiesListView"
+                          IsPullToRefreshEnabled="True"
+                          IsVisible="False"
+                          ItemSelected="OnCitiesListView_ItemSelected"
+                          HeightRequest="250"/>
+                </StackLayout>
+                <!--#endregion-->
+
+                <!--#region Universities-->
+                <StackLayout Orientation="Horizontal"                         
+                         Spacing="5"
+                         Padding="0,0,0,0">
+                    <Label Text="ВУЗ: " 
+                       FontSize="Medium"
+                       VerticalOptions="End" />
+                    <Entry x:Name="universitiesEntry"
+                           TextChanged="OnUniversitiesEntry_TextChanged"
+                           Focused="OnUniversitiesEntry_Focused"
+                           Unfocused="OnUniversitiesEntry_Unfocused"
+                           HorizontalOptions="FillAndExpand"
+                           IsEnabled="False"
+                           Text="{Binding University.Title, Mode=TwoWay}"/>
+                    <Button x:Name="universitiesButton"
+                        Text="V"
+                        Clicked="OnUniversitiesButton_Clicked" />
+                </StackLayout>
+
+                <StackLayout>
+                    <ListView x:Name="universitiesListView"
+                          IsPullToRefreshEnabled="True"
+                          IsVisible="False"
+                          ItemSelected="OnUniversitiesListView_ItemSelected"
+                          HeightRequest="250"/>
+                </StackLayout>
+                <!--#endregion-->
+
+                <Button Text="Заполнить бланк"
+                    HorizontalOptions="Center"
+                    Clicked="OnNavigateButtonClicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

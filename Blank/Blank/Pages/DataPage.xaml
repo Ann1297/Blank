@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Blank.DataPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                     Spacing="10"
+                     Padding="10,20,10,20">
+
+            <Label Text="Даные бланка"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
+            <StackLayout Orientation="Horizontal"
+                         Spacing="5">
+                <Label Text="Имя: " 
+                       FontSize="Medium"
+                       HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding FirstName}"
+                       FontSize="Medium"
+                       FontAttributes="Bold"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         Spacing="5">
+                <Label Text="Фамилия: " 
+                       FontSize="Medium"
+                       HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding LastName}" 
+                       FontSize="Medium"
+                       FontAttributes="Bold" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         Spacing="5">
+                <Label Text="Страна: " 
+                       FontSize="Medium"
+                       HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding Country.Title}" 
+                       FontSize="Medium"
+                       FontAttributes="Bold" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         Spacing="5">
+                <Label Text="Город: " 
+                       FontSize="Medium"
+                       HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding City.Title}" 
+                       FontSize="Medium"
+                       FontAttributes="Bold" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         Spacing="5">
+                <Label Text="ВУЗ: " 
+                       FontSize="Medium"
+                       HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding University.Title}" 
+                       FontSize="Medium"
+                       FontAttributes="Bold" />
+            </StackLayout>
+
+            <Button Text="Назад"
+                    HorizontalOptions="Center"
+                    Clicked="OnNavigateButtonClicked"/>            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
